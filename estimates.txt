@@ -1,0 +1,12 @@
+RTO (Recovery Time Object) = RTO is concerned with applications and systems. The measurement includes data recovery but primarily describes time limitations on application downtime
+RPO (Recovery Point Object) = RPO is concerned with the amount of data that is lost following a failure event
+
+AZ outage
+---------
+
+In a Multi-AZ, for a single AZ outage, the RTO is the time it takes to start up a new RDS instance. So RTO is about 1-2 minutes. Data loss is minimised as we failover from our primary instance to our secondary instance with no data loss. So the RPO is 0.
+
+Region Outage
+-------------
+
+In the event of a single region outage, the RTO is will be time to promote the replica. This is about 5 minutes to promote the replica. Read replica is asynchronous cross region so RPO is 0.
