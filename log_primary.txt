@@ -1,7 +1,6 @@
-[root@ip-10-1-11-138 ~]# mysql -h database-1.c8p7ixesolue.us-east-2.rds.amazonaws.com  -u udacity -p
-Enter password:
+[root@ip-10-1-11-106 ~]# mysql -h database-2.c8p7ixesolue.us-east-2.rds.amazonaws.com -u  admin -p                                                                      Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 28
+Your MySQL connection id is 22
 Server version: 5.7.22-log Source distribution
 
 Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
@@ -14,22 +13,32 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> use udacity
 Database changed
-mysql> CREATE TABLE Creators (id INT, name VARCHAR(20), email VARCHAR(20));
-Query OK, 0 rows affected (0.04 sec)
+mysql> CREATE TABLE INVESTORS (id INT, name VARCHAR(20), email VARCHAR(20));
+Query OK, 0 rows affected (0.05 sec)
 
-mysql> INSERT INTO Creators (id,name,email) VALUES(1,"Mohan","mohan@gmail.com");
-Query OK, 1 row affected (0.01 sec)
-
-mysql> INSERT INTO Creators (id,name,email) VALUES(2,"Teja","teja@gmail.com");
-Query OK, 1 row affected (0.01 sec)
-
-mysql> INSERT INTO Creators (id,name,email) VALUES(2,"Santhosh","santhosh@gmail.com");
-Query OK, 1 row affected (0.01 sec)
-
-mysql> show tables;
+mysql> SHOW TABLES;
 +-------------------+
 | Tables_in_udacity |
 +-------------------+
-| Creators          |
+| INVESTORS         |
 +-------------------+
 1 row in set (0.00 sec)
+
+mysql> INSERT INTO INVESTORS (id,name,email) VALUES(1,"veeru","veeru@gmail.com");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO INVESTORS (id,name,email) VALUES(1,"john","john@gmail.com");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO INVESTORS (id,name,email) VALUES(1,"king","king@gmail.com");
+Query OK, 1 row affected (0.12 sec)
+
+mysql> SELECT * FROM INVESTORS;
++------+-------+-----------------+
+| id   | name  | email           |
++------+-------+-----------------+
+|    1 | veeru | veeru@gmail.com |
+|    1 | john  | john@gmail.com  |
+|    1 | king  | king@gmail.com  |
++------+-------+-----------------+
+3 rows in set (0.00 sec)
